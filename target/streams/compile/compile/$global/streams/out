@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Arthur\Documents\CW_4e_jaar\software_engineering\project\team6\src\main\scala\de\thm\move\models\house\package.scala:3:28: imported `FillPattern' is permanently hidden by definition of object FillPattern in package models[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport de.thm.move.models.{FillPattern, LinePattern}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Arthur\Documents\CW_4e_jaar\software_engineering\project\team6\src\main\scala\de\thm\move\models\house\package.scala:3:41: imported `LinePattern' is permanently hidden by definition of object LinePattern in package models[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport de.thm.move.models.{FillPattern, LinePattern}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

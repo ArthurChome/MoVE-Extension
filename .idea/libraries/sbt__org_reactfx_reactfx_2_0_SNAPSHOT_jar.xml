@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.reactfx:reactfx:2.0-SNAPSHOT:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.reactfx/reactfx/srcs/reactfx-2.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

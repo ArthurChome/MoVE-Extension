@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.thm.move.controllers.MoveCtrl">
+   <left>
+      <ToolBar orientation="VERTICAL" BorderPane.alignment="CENTER">
+        <items>
+            <ToggleButton fx:id="line_pointer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPointerClicked" styleClass="toolbar-button" text="%fa.mouse-pointer">
+               <toggleGroup>
+                  <ToggleGroup fx:id="btnGroup" />
+               </toggleGroup>
+               <tooltip>
+                  <Tooltip text="%tools.arrow" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton fx:id="line_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLineClicked" styleClass="toolbar-button" text="%fa.minus" toggleGroup="$btnGroup">
+               <tooltip>
+                  <Tooltip text="%tools.line" />
+               </tooltip></ToggleButton>
+            <ToggleButton fx:id="path_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPathClicked" styleClass="toolbar-button" toggleGroup="$btnGroup">
+               <tooltip>
+                  <Tooltip text="%tools.path" />
+               </tooltip>
+               <graphic>
+                  <SVGPath content="m58,84l0,7.33334l7.33334,0l0,7.33334" fill="TRANSPARENT" stroke="BLACK" styleClass="svg-icon" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="rectangle_room_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onRectangleClicked" styleClass="toolbar-button" text="%fa.house" toggleGroup="$btnGroup">
+               <tooltip>
+                  <Tooltip text="%tools.rectangle" />
+               </tooltip>
+               <graphic>
+                  <SVGPath content="m0,0
+                                    l8.1,0
+                                    l0,8
+                                    l-8.1,0z" stroke="BLACK" styleClass="svg-icon" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="polygon_room_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPolygonClicked" styleClass="toolbar-button" text="%fa.house" toggleGroup="$btnGroup">
+               <tooltip>
+                  <Tooltip text="%tools.polygon" />
+               </tooltip>
+               <graphic>
+                  <SVGPath content="m0,0
+                                    l5.23557,-3.80908
+                                    l5.23557,3.80908
+                                    l-1.99962,6.16336
+                                    l-6.47169,0z" stroke="BLACK" styleClass="svg-icon" />
+               </graphic></ToggleButton>
+             <ToggleButton fx:id="text_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onTextClicked" styleClass="toolbar-button" text="%fa.font" toggleGroup="$btnGroup">
+                <tooltip>
+                   <Tooltip text="%tools.text" />
+                </tooltip></ToggleButton>
+            <ToggleButton fx:id="measurement_tool_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMeasurementToolClicked" styleClass="toolbar-button" text="%fa.ruler" toggleGroup="$btnGroup">
+            <tooltip>
+                <Tooltip text="%tools.measurement" />
+            </tooltip></ToggleButton>
+            <ToggleButton fx:id="window_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onWindowClicked" styleClass="toolbar-button" text="%fa.window" toggleGroup="$btnGroup">
+                <tooltip>
+                    <Tooltip text="%tools.window" />
+                </tooltip></ToggleButton>
+            <ToggleButton fx:id="door_btn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDoorClicked" styleClass="toolbar-button" text="%fa.door" toggleGroup="$btnGroup">
+                <tooltip>
+                    <Tooltip text="%tools.door" />
+                </tooltip></ToggleButton>
+        </items>
+      </ToolBar>
+   </left>
+   <top>
+      <VBox prefHeight="74.0" prefWidth="600.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="%file">
+                  <items>
+                        <MenuItem fx:id="newMenuItem" onAction="#onNewClicked" text="%file.new">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.new" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="openMenuItem" onAction="#onOpenClicked" text="%file.open">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.open" />
+                           </graphic></MenuItem>
+
+
+                      <Menu fx:id="recentFilesMenu" text="%file.recent-files">
+                          <items>
+                          </items>
+                      </Menu>
+
+
+                        <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#onSaveClicked" text="%file.save">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.save" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#onSaveAsClicked" text="%file.save-as">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.save" />
+                           </graphic></MenuItem>
+                      <MenuItem fx:id="exportSvgMenuItem" mnemonicParsing="false" onAction="#onExportSvgClicked" text="%file.export-svg" />
+                      <MenuItem fx:id="exportBitmatpMenuItem" mnemonicParsing="false" onAction="#onExportBitmapClicked" text="%file.export-bitmap" />
+                      <MenuItem fx:id="chPaperSizeMenuItem" mnemonicParsing="false" onAction="#onChPaperSizeClicked" text="%file.paper-size">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.papersize" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="chGridSizeMenuItem" mnemonicParsing="false" onAction="#onChGridSizeClicked" text="%file.grid-size">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.gridsize" />
+                           </graphic></MenuItem>
+                    <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#onClosePressed" text="%file.exit">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.file.exit" />
+                           </graphic></MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%edit">
+                  <items>
+                        <MenuItem fx:id="undoMenuItem" mnemonicParsing="false" onAction="#onUndoClicked" text="%edit.undo">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.undo" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="redoMenuItem" mnemonicParsing="false" onAction="#onRedoClicked" text="%edit.redo">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.redo" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="copyMenuItem" mnemonicParsing="false" onAction="#onCopyClicked" text="%edit.copy">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.copy" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="pasteMenuItem" mnemonicParsing="false" onAction="#onPasteClicked" text="%edit.paste">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.paste" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#onDeleteClicked" text="%edit.delete">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.delete" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="duplicateMenuItem" mnemonicParsing="false" onAction="#onDuplicateClicked" text="%edit.duplicate">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.duplicate" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="groupMenuItem" mnemonicParsing="false" onAction="#onGroupPressed" text="%edit.group">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.group" />
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="ungroupMenuItem" mnemonicParsing="false" onAction="#onUngroupPressed" text="%edit.ungroup">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.edit.ungroup" />
+                           </graphic></MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="%view">
+                     <items>
+                        <CheckMenuItem fx:id="showAnchorsItem" mnemonicParsing="false" onAction="#onShowAnchorsClicked" selected="true" text="%view.show-anchors" />
+                        <CheckMenuItem fx:id="showGridItem" mnemonicParsing="false" onAction="#onShowGridClicked" text="%view.show-grid" />
+                        <CheckMenuItem fx:id="enableGridItem" mnemonicParsing="false" onAction="#onEnableGridClicked" text="%view.enable-snap-to-grid" />
+                         <CheckMenuItem fx:id="enableSnapToPoint" mnemonicParsing="false" onAction="#onEnableSnapToPoint" text="%view.enable-snap-to-point" />
+                         <MenuItem fx:id="chSnapToPointSensitivityMenuItem" mnemonicParsing="false" onAction="#onChSnapToPointSensitivityClicked" text="%view.sensitivity-snap-to-point"/>
+                         <MenuItem fx:id="chSnapToGridSensitivityMenuItem" mnemonicParsing="false" onAction="#onChSnapToGridSensitivityClicked" text="%view.sensitivity-snap-to-grid"/>
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="%help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onAboutClicked" text="%help.about">
+                           <graphic>
+                              <Label styleClass="toolbar-button" text="%fa.help.about" />
+                           </graphic></MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <StackPane fx:id="topToolbarStack">
+               <children>
+                 <fx:include fx:id="embeddedTextMenu" source="textMenu.fxml" />
+                  <fx:include fx:id="embeddedColorToolbar" source="colorToolbar.fxml" />
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="326.0" prefViewportWidth="445.0">
+         <content>
+            <Group autoSizeChildren="false">
+               <children>
+                  <StackPane fx:id="drawStub" prefHeight="150.0" prefWidth="200.0" styleClass="draw-stub" BorderPane.alignment="CENTER" />
+               </children>
+            </Group>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+       <fx:include fx:id="embeddedBottomToolbar" source="bottomToolbar.fxml" BorderPane.alignment="CENTER"/>
+   </bottom>
+</BorderPane>
